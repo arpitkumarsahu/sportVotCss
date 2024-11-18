@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <div>
-<div className="box-container">
+      <div className="box-container">
       {boxes.map((box, index) => (
         <div key={index} className="box">
           Box {box}
