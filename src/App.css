@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+/* Container for boxes */
+.box-container {
+  display: flex;
+  gap: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.box {
+  width: 100px;
+  height: 150px;
+  background-color: #007bff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on the main box */
+.box:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.5);
+  z-index: 1;
+}
+
+.box:hover + .box {
+  transform: translateY(-7.5px);
+}
+
+/* Immediate right sibling */
+.box:hover ~ .box:first-of-type {
+  transform: translateY(-7.5px);
 }
