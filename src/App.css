@@ -50,3 +50,41 @@ body {
 .box:hover ~ .box:first-of-type {
   transform: translateY(-7.5px);
 }
+
+
+
+.infinite-scroll {
+  padding-top: 40px;
+  width: 1200px; 
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-content {
+  display: flex;
+  animation: scroll 10s linear infinite; /* Continuous scrolling */
+}
+
+.item {
+  flex: 0 0 300px; 
+  height: 100px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid #121212;
+  border-radius: 5px;
+}
+
+/* Scrolling animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1500px); 
+  }
+}
